@@ -13,6 +13,7 @@ int main(void)
 
 	while (nu <= 9)
 	{
+		putchar(' ');
 		if (nu == 9)
 		{
 			putchar(nu + '0');
@@ -20,7 +21,6 @@ int main(void)
 		{
 			putchar(nu + '0');
 			putchar(',');
-			putchar(' ');
 		}
 		nu++;
 	}
