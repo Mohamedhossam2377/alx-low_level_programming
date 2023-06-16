@@ -23,6 +23,7 @@ int main(void)
 					{
 						putchar(a + '0');
 						putchar(b + '0');
+						putchar(' ');
 						putchar(c + '0');
 						putchar(d + '0');
 					if (a + b != 17 || c + d != 18)
