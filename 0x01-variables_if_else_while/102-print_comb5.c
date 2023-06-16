@@ -13,7 +13,7 @@ int main(void)
 
 	for (a = 0; a <= 99; a++)
 	{
-		for (b = 0; b <= 99; b++)
+		for (b = a; b <= 99; b++)
 		{
 			if (b != a)
 			{
