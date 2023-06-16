@@ -21,6 +21,8 @@ int main(void)
 				{
 					if (a != c || b != d || a + b < c + d)
 					{
+					if (a + b < c + d)
+					{
 						putchar(a + '0');
 						putchar(b + '0');
 						putchar(' ');
@@ -30,6 +32,7 @@ int main(void)
 					{
 						putchar(',');
 						putchar(' ');
+					}
 					}
 					}
 				}
