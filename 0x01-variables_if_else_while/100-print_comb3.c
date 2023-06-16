@@ -20,11 +20,10 @@ int main(void)
 			{
 				putchar(a + '0');
 				putchar(b + '0');
+				putchar(',');
+				putchar(' ');
 			}
 		}
-
-		putchar(',');
-		putchar(' ');
 	}
 
 	putchar('\n');
