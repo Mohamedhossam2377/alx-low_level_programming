@@ -21,7 +21,7 @@ int main(void)
 				{
 					if (a != c || b != d || a + b < c + d)
 					{
-					if (a + b <= c + d)
+					if (a + b <= c + d || (b = c && a = d))
 					{
 						putchar(a + '0');
 						putchar(b + '0');
