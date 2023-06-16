@@ -12,24 +12,19 @@ int main(void)
 	int a = 0;
 	int b = 0;
 
-	while (a <= 9)
+	for (a = 0; a <= 9; a++)
 	{
-		while (b <= 9)
+		for (b = 0; b <= 9; b++)
 		{
 			if (a < b)
 			{
 				putchar(a + '0');
 				putchar(b + '0');
-				b++;
-			} else
-			{
-				b++;
 			}
 		}
 
 		putchar(',');
 		putchar(' ');
-		a++;
 	}
 
 	putchar('\n');
