@@ -15,7 +15,7 @@ int main(void)
 	{
 		if (nu == 9)
 		{
-			putchar(nu);
+			putchar(nu + '0');
 		} else
 		{
 			putchar(nu + '0');
