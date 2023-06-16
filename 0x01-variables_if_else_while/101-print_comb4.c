@@ -18,9 +18,9 @@ int main(void)
 			{
 				if (x != y && y != z && x != z && x < y && y < z)
 				{
-					putchar(x);
-					putchar(y);
-					putchar(z);
+					putchar(x + '0');
+					putchar(y + '0');
+					putchar(z + '0');
 					if (x != 7 && y != 8 && z != 9)
 					{
 						putchar(',');
