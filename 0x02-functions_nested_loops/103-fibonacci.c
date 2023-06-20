@@ -24,4 +24,7 @@ int main(void)
 		f1 = f2;
 		f2 = result;
 	}
+	printf("%.0f\n", total_result);
+
+	return (0);
 }
