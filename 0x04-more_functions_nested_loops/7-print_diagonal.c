@@ -16,7 +16,7 @@ void print_diagonal(int n)
 	{
 		if (i == n - 1)
 		{
-			_putchar('\\');
+			_putchar(92);
 			break;
 		}
 		_putchar(' ');
