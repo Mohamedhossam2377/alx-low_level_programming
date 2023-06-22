@@ -22,10 +22,10 @@ void print_diagonal(int n)
 		if (i == n)
 		{
 			_putchar('/');
+			_putchar('\n');
 			break;
 		}
 		_putchar(' ');
-		_putchar('\n');
 	}
 	_putchar('\n');
 }
