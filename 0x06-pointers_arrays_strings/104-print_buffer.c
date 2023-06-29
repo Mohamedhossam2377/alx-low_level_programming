@@ -84,6 +84,7 @@ void print_buffer(char *b, int size)
 			printascii(b, start, end);
 			printf("\n");
 		}
-	} else
+	}
+	else
 		printf("\n");
 }
