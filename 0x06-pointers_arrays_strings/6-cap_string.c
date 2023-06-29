@@ -45,7 +45,7 @@ char *cap_string(char *str)
 
 	while (*str)
 	{
-		if (is_delimter(*str))
+		if (is_delimiter(*str))
 			found_delimiter = 1;
 		else if (is_lower(*str) && found_delimiter)
 		{
