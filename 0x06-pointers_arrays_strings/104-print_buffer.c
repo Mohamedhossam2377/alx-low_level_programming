@@ -2,67 +2,6 @@
 #include <stdio.h>
 
 /**
- * isprintableascii - determine if n is a printable ascii char
- *
- * @n: integer
- *
- * Return: 1 if true and 0 if false
- */
-int isprintableascii(int n)
-{
-	return (n >= 32 && n <= 126);
-}
-
-/**
- * printhexes - print hex values for string b
- *
- * @b: string
- * @start: starting position
- * @end: ending position
- *
- * Return: nothing
- */
-void printhexes(char *b, int start, int end)
-{
-	int i = 0;
-
-	while (i < 10)
-	{
-		if (i < end)
-			printf("%02x", *(b + start + i));
-		else
-			printf("  ");
-		if (i % 2)
-			printf(" ");
-		i++;
-
-	}
-}
-
-/**
- * printascii - print ascii values for string b
- *
- * @b: string
- * @start: starting position
- * @end: ending position
- *
- * Return: nothing
- */
-void printascii(char *b, int start, int end)
-}
-	int ch, i = 0;
-
-	while (i < end)
-	{
-		ch = *(b + i + start);
-		if (!isprintableascii(ch))
-			ch = 46;
-		printf("%c", ch);
-		i++;
-	}
-}
-
-/**
  * print_buffer - print buffer
  *
  * @b: string
@@ -72,19 +11,41 @@ void printascii(char *b, int start, int end)
  */
 void print_buffer(char *b, int size)
 {
-	int start, end;
+	int o, i, j;
 
-	if (size > 0)
+	o = 0;
+
+	if (size <= 0)
 	{
-		for (start = 0; start < size; start += 10)
-		{
-			end = (size - start < 10) ? size - start : 10;
-			printf("%08x: ", start);
-			printhexes(b, start, end);
-			printascii(b, start, end);
-			printf("\n");
-		}
-	}
-	else
 		printf("\n");
+		return;
+	}
+	while (o < size)
+	{
+		j = size - o < 10 ? size - o : 10;
+		printf("%08x: ", o);
+		for (i = 0; i < 10; i++)
+		{
+			if (i < j)
+				printf("%02x", *(b + o + i));
+			else
+				printf("  ");
+			if (i % 2)
+			{
+				printf(" ");
+			}
+		}
+		for (i = 0; i < j; i++)
+		{
+			int c = *(b + o + i);
+
+			if (c < 32 || c > 132)
+			{
+				c = '.';
+			}
+			printf("%c", c);
+		}
+		printf("\n");
+		o += 10;
+	}
 }
