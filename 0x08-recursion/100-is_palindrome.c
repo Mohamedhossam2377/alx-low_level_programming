@@ -9,7 +9,7 @@
  */
 int count(char *s)
 {
-	int i = 0;
+	int n = 0;
 
 	if (*s > '\0')
 		n = count(s + 1) + n + 1;
