@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 			{
 				mincents = mincents + totmoney / cent[i];
 				totmoney = totmoney % cent[i];
-				if (money % cent[i] == 0)
+				if (totmoney % cent[i] == 0)
 				{
 					break;
 				}
