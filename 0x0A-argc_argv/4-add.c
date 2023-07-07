@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 	{
 		for (i = argv[argc]; *i; i++)
 			if (*i < '0' || *i > '9')
-				return (printf("Error\n", 1));
+				return (printf("Error\n"), 1);
 		add = add + atoi(argv[argc]);
 	}
 	printf("%d\n", add);
