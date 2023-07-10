@@ -11,8 +11,11 @@
 int slength(char *s)
 {
 	int len;
+
 	for (len = 0; s[len] != '\0'; len++)
-		;
+	{
+	;
+	}
 	return (len);
 }
 /**
@@ -35,7 +38,7 @@ char *str_concat(char *s1, char *s2)
 
 	len1 = slength(s1);
 	len2 = slength(s2);
-	p = malloc((len1 + len2) *sizeof(char) + 1);
+	p = malloc((len1 + len2) * sizeof(char) + 1);
 	if (p == 0)
 		return (0);
 
