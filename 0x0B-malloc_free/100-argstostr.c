@@ -41,7 +41,7 @@ char *argstostr(int ac, char **av)
 	if (p == 0)
 		return (NULL);
 
-	for (i = 0; i < c1; i++)
+	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++, c2++)
 			p[c2] = av[i][j];
