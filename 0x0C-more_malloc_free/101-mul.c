@@ -10,7 +10,7 @@
  *
  * Return: 1 if digit, or 0 otherwise
  */
-int _is digit(int c)
+int _isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }
