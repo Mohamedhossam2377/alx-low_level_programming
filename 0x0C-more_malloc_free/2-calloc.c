@@ -13,12 +13,14 @@
  */
 char *fill_memory(char *s, char c, unsigned int num)
 {
-	char *pt = s;
+	unsigned int i;
 
-	while (num--)
-		*s++ = c;
+	for (i = 0; i < n; i++)
+	{
+		s[i] = c;
+	}
 
-	return (pt);
+	return (s);
 }
 /**
  * _calloc - allocates memory for an array, using malloc
@@ -30,16 +32,16 @@ char *fill_memory(char *s, char c, unsigned int num)
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *p;
+	char *p;
 
 	if (size == 0 || nmemb == 0)
 		return (NULL);
-	p = malloc(sizeof(int) * nmemb);
+	p = malloc(size * nmemb);
 
-	if (p == 0)
+	if (p == NULL)
 		return (NULL);
 
-	fill_memory(p, 0, sizeof(int) * nmemb);
+	fill_memory(p, 0, size * nmemb);
 
 	return (p);
 }
