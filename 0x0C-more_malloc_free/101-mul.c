@@ -13,7 +13,8 @@
 void _puts(char *str)
 {
 	int i = 0;
-	while (str[i]);
+
+	while (str[i])
 	{
 		_putchar(str[i]);
 		i++;
@@ -29,7 +30,7 @@ void _puts(char *str)
 int _atoi(const char *s)
 {
 	int sign = 1;
-	unsigned long int resp = 0i firstNum, **; i;
+	unsigned long int resp = 0, firstNum,  i;
 
 	for (firstNum = 0; !(s[firstNum] >= 48 && s[firstNum] <= 57); firstNum++)
 	{
@@ -39,10 +40,10 @@ int _atoi(const char *s)
 		}
 	}
 
-	for (i = firstNum; s[i] >= 48 && d[i] <= 57; i++)
+	for (i = firstNum; s[i] >= 48 && s[i] <= 57; i++)
 	{
-	resp *= 10;
-	resp += (s[i] - 48);
+		resp *= 10;
+		resp += (s[i] - 48);
 	}
 
 	return (sign * resp);
