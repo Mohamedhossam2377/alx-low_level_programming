@@ -4,69 +4,83 @@
 #include <string.h>
 
 /**
- * _puts - print s string
+ * _isdigit - checks if character is digit
  *
- * @str: pointer to string
+ * @c: character
  *
- * Return: void
+ * Return: 1 if digit, or 0 otherwise
  */
-void _puts(char *str)
+int _is digit(int c)
+{
+	return (c >= '0' && c <= '9');
+}
+
+/**
+ * _strlen - get the length of string
+ *
+ * @s: string
+ *
+ * Return: integer length
+ */
+int _strlen(char *s)
 {
 	int i = 0;
 
-	while (str[i])
-	{
-		_putchar(str[i]);
+	while (*s++)
 		i++;
-	}
+	return (i);
 }
-/**
- * _atoi - convert a string
- *
- * @s: string*
- *
- * Return: integer to be converted
- */
-int _atoi(const char *s)
-{
-	int sign = 1;
-	unsigned long int resp = 0, firstNum,  i;
 
-	for (firstNum = 0; !(s[firstNum] >= 48 && s[firstNum] <= 57); firstNum++)
+/**
+ * big_multiply - multiply two big number strings
+ * @s1: the first big number string
+ * @s2: the second big number string
+ *
+ * Return: the product big number string
+ */
+char *big_multiply(char *s1, char *s2)
+{
+	char *r;
+	int l1, l2, a, b, c, x;
+
+	l1 = _strlen(s1);
+	l2 = _strlen(s2);
+	r = malloc(a = x = l1 + l2);
+	if (!r)
+		printf("Error\n"), exit(98);
+	while (a--)
+		r[a] = 0;
+
+	for (l1--; l1 >= 0; l1--)
 	{
-		if (s[firstNum] == '-')
+		if (!_isdigit(s1[l1]))
 		{
-			sign *= -1;
+			free(r);
+			printf("Error\n"), exit(98);
 		}
-	}
+		a = s1[l1] - '0';
+		c = 0;
 
-	for (i = firstNum; s[i] >= 48 && s[i] <= 57; i++)
-	{
-		resp *= 10;
-		resp += (s[i] - 48);
-	}
+		for (l2 = _strlen(s2) - 1; l2 >= 0; l2--)
+		{
+			if (!_isdigit(s2[l2]))
+			{
+				free(r);
+				printf("Error\n"), exit(98);
+			}
+			b = s2[l2] - '0';
 
-	return (sign * resp);
+			c += r[l1 + l2 + 1] + (a * b);
+			r[l1 + l2 + 1] = c % 10;
+
+			c /= 10;
+		}
+		if (c)
+			r[l1 + l2 + 1] += c;
+	}
+	return (r);
 }
-/**
- * print_int - prints an integer
- *
- * @n: integer
- *
- * Return: 0
- */
-void print_int(unsigned long int n)
-{
-	unsigned long int divisor = 1, i, resp;
 
-	for (i = 0; n / divisor > 9; i++, divisor *= 10)
-		;
-	for (; divisor >= 1; n %= divisor, divisor /= 10)
-	{
-		resp = n / divisor;
-		_putchar('0' + resp);
-	}
-}
 /**
  * main - print a multiplication
  *
@@ -75,17 +89,29 @@ void print_int(unsigned long int n)
  *
  * Return: 0
  */
-int main(int argc, char const *argv[])
+int main(int argc, char **argv[])
 {
-	(void)argc;
+	char *r;
+	int a, b, x;
 
 	if (argc != 3)
-	{
-		_puts("Error");
-		exit(98);
-	}
-	print_int(_toi(argv[1]) * _atoi(argv[2]));
-	_putchar('\n');
+		printf("Error\n"), exit(98);
 
+	x = _strlen(argv[1]) + _strlen(argv[2]);
+	r = big_multiply(argv[1], argv[2]);
+	b = 0;
+	a = 0;
+	while (b < x)
+	{
+		if (r[b])
+			a = 1;
+		if (a)
+			_putchar(r[b] + '0');
+		c++;
+	}
+	if (!a)
+		_putchar('0');
+	_putchar('\n');
+	free(r);
 	return (0);
 }
