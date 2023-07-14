@@ -99,14 +99,14 @@ int main(int argc, char **argv[])
 
 	x = _strlen(argv[1]) + _strlen(argv[2]);
 	r = big_multiply(argv[1], argv[2]);
-	b = 0;
+	c = 0;
 	a = 0;
-	while (b < x)
+	while (c < x)
 	{
-		if (r[b])
+		if (r[c])
 			a = 1;
 		if (a)
-			_putchar(r[b] + '0');
+			_putchar(r[c] + '0');
 		c++;
 	}
 	if (!a)
