@@ -30,7 +30,7 @@ void f_int(char *separator, va_list ptr)
  */
 void f_float(char *separator, va_list ptr)
 {
-	printf("%S%f", separator, va_arg(ptr, double));
+	printf("%s%f", separator, va_arg(ptr, double));
 }
 
 /**
