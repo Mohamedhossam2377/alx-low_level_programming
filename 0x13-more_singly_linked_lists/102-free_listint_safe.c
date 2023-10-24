@@ -5,7 +5,7 @@
  *
  * @head: first node
  *
- * Return: ddress of node where loop starts, NULL if no loop
+ * Return: address of node where loop starts, NULL if no loop
  */
 listint_t *find_loop(listint_t *head)
 {
