@@ -38,7 +38,7 @@ const listint_t **reallocate(const listint_t **old_list, size_t s,
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t i, count = 0;
-	const list_t **li = NULL;
+	const listint_t **li = NULL;
 
 	while (head != NULL)
 	{
