@@ -10,6 +10,7 @@
 size_t print_listint(const listint_t *h)
 {
 	size_t sum;
+
 	for (sum = 0; h != NULL; sum++)
 	{
 		printf("%d\n", h->n);
