@@ -53,7 +53,7 @@ size_t free_listint_safe(listint_t **h)
 				free(*h);
 				break;
 			}
-			l++;
+			len++;
 			next_node = next_node->next;
 			free((*h)->next);
 			l = 0;
