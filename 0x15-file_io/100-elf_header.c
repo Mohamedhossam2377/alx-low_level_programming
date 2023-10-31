@@ -75,7 +75,7 @@ void print_version(Elf64_Ehdr h)
 		case EV_CURRENT:
 			printf(" (current)");
 		break;
-		case EV_NONE;
+		case EV_NONE:
 			printf("%s", "");
 		break;
 		break;
