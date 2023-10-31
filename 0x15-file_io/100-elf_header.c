@@ -131,7 +131,7 @@ printf("\n");
  *
  * @h: ELF header struct
  */
-void print_osabi_more(Elf64_Ehdr h )
+void print_osabi_more(Elf64_Ehdr h)
 {
 	switch (h.e_ident[EI_OSABI])
 	{
@@ -214,7 +214,7 @@ void print_entry(Elf64_Ehdr h)
 	printf("  Entry point address:               0x");
 	if (h.e_ident[EI_DATA] != ELFDATA2MSB)
 	{
-		i = h.e_ident[EI_CLASS] == ELFCLASS ? 7 : 3;
+		i = h.e_ident[EI_CLASS] == ELFCLASS64 ? 7 : 3;
 		while (!p[i])
 			i--;
 		printf("%x", p[i--]);
