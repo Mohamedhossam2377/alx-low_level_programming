@@ -30,7 +30,7 @@ int main(int ac, char **av)
 	if (to_fd == -1)
 		dprintf(STDERR_FILENO, ERR_NOWRITE, av[2]), exit(99);
 
-	while ((num_bytes = read(fd_from, buffer, READ_BUF_SIZE)) > 0)
+	while ((num_bytes = read(from_fd, buffer, READ_BUF_SIZE)) > 0)
 		if (write(to_fd, buffer, num_bytes) != num_bytes)
 			dprintf(STDERR_FILENO, ERR_NOWRITE, av[2]), exit(99);
 	if (num_bytes == -1)
